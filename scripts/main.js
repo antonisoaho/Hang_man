@@ -40,9 +40,7 @@ buttons.forEach((button) => {
 
 const tryLetter = () => {
   checkLetter(inputField.value.toUpperCase(), wordField.textContent, newWord);
-
   resetInput(inputField.value);
-  wordCheck();
 };
 
 const showFigure = (step) => {
@@ -52,6 +50,7 @@ const showFigure = (step) => {
     eyes.textContent = "XX";
     wordField.textContent = `Word: ${newWord}`;
     wordField.style.fontSize = "30px";
+    letterBox.value = "Busted...";
   }
 };
 
@@ -107,6 +106,7 @@ const checkLetter = (letter, secret, base) => {
 
     const resultString = resultArray.join("");
     wordField.textContent = resultString;
+    wordCheck;
     return;
   }
   if (!letterBox.value.includes(letter)) {
