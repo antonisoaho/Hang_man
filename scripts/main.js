@@ -33,6 +33,7 @@ buttons.forEach((button) => {
         return [newWord, secretWord];
       } else if (button.classList.contains("btn-reset")) {
         hideFigure();
+        inputField.setAttribute("readonly", true);
       }
     }
   });
@@ -51,10 +52,12 @@ const showFigure = (step) => {
     wordField.textContent = `Word: ${newWord}`;
     wordField.style.fontSize = "30px";
     letterBox.value = "Busted...";
+    inputField.setAttribute("readonly", true);
   }
 };
 
 const hideFigure = () => {
+  inputField.removeAttribute("readonly");
   gameFigure.forEach((fig) => {
     fig.classList.add("hidden");
   });
@@ -119,6 +122,7 @@ const checkLetter = (letter, secret, base) => {
 
 const wordCheck = () => {
   if (!wordField.textContent.includes("_")) {
+    inputField.setAttribute("readonly", true);
     letterBox.value = "You won!!";
     return;
   }
