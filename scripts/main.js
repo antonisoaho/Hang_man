@@ -42,6 +42,10 @@ buttons.forEach((button) => {
 const tryLetter = () => {
   checkLetter(inputField.value.toUpperCase(), wordField.textContent, newWord);
   resetInput(inputField.value);
+  if (wordField.textContent === newWord) {
+    letterBox.value = "You won!!";
+    inputField.setAttribute("readonly", true);
+  }
 };
 
 const showFigure = (step) => {
@@ -109,7 +113,6 @@ const checkLetter = (letter, secret, base) => {
 
     const resultString = resultArray.join("");
     wordField.textContent = resultString;
-    wordCheck;
     return;
   }
   if (!letterBox.value.includes(letter)) {
@@ -117,13 +120,5 @@ const checkLetter = (letter, secret, base) => {
     showFigure(step);
     step++;
     return step;
-  }
-};
-
-const wordCheck = () => {
-  if (!wordField.textContent.includes("_")) {
-    inputField.setAttribute("readonly", true);
-    letterBox.value = "You won!!";
-    return;
   }
 };
