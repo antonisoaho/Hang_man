@@ -1,0 +1,243 @@
+@import url("https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300;400;700&display=swap");
+
+:root {
+  --manColor: #ccc;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Comic Neue", cursive;
+}
+body {
+  min-height: 100vh;
+  width: 100%;
+  background-color: #888888;
+}
+
+.game {
+  margin: 2rem auto;
+  width: 600px;
+  height: 800px;
+  display: grid;
+  grid-template-columns: 0.5fr 3fr 3fr 0.5fr;
+  grid-template-rows: 0.5fr 4fr 1fr 0.5fr 0.1fr;
+  border: 1px solid;
+  gap: 5px;
+  z-index: -2;
+  background-color: #d3d3d3;
+  border-radius: 10px;
+}
+
+.game__header {
+  grid-column: span 4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.game__header::after {
+  position: absolute;
+  right: 140px;
+  bottom: 0;
+  content: "that is the question!";
+  font-style: italic;
+}
+
+.game__figure {
+  grid-column: 2/4;
+  position: relative;
+}
+
+.game__figure--canvas.picture {
+  background: url(../assets/gamecanvas.png);
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 0;
+}
+
+.game__figure--canvas {
+  position: absolute;
+}
+
+.canvas-rope {
+  width: 5px;
+  height: 80px;
+  background-color: whitesmoke;
+  top: 90px;
+  right: 150px;
+}
+
+.canvas-noose {
+  border-radius: 50%;
+  width: 20px;
+  height: 30px;
+  border: solid 5px whitesmoke;
+  top: 170px;
+  right: 142px;
+  z-index: 1;
+}
+.game__figure--man {
+  position: absolute;
+}
+
+.man-head {
+  z-index: 2;
+  border-radius: 50%;
+  width: 50px;
+  height: 65px;
+  background-color: var(--manColor);
+  top: 135px;
+  right: 142px;
+  transform: rotatez(-15deg);
+}
+
+.man-eyes {
+  position: absolute;
+  font-size: 50px;
+  top: -8px;
+  left: 8px;
+}
+
+.busted {
+  font-size: 15px;
+  top: 25px;
+  left: 5px;
+}
+
+.man-body {
+  width: 7px;
+  height: 67px;
+  background-color: var(--manColor);
+  top: 192px;
+  right: 147px;
+  z-index: 0;
+}
+
+.man-arm {
+  width: 5px;
+  height: 45px;
+  background-color: var(--manColor);
+  top: 200px;
+}
+
+.man-arm.left-arm {
+  transform: rotatez(30deg);
+  right: 161px;
+}
+.man-arm.right-arm {
+  transform: rotateZ(-30deg);
+  right: 135px;
+}
+
+.man-leg {
+  width: 6px;
+  height: 60px;
+  background-color: var(--manColor);
+  top: 250px;
+}
+
+.man-leg.left-leg {
+  transform: rotatez(22deg);
+  right: 159px;
+}
+.man-leg.right-leg {
+  transform: rotatez(-22deg);
+  right: 135px;
+}
+
+.man-word {
+  width: 60%;
+  bottom: 55px;
+  height: 50px;
+  right: 50px;
+  font-size: 40px;
+  color: whitesmoke;
+  text-align: center;
+  letter-spacing: 4px;
+}
+
+.hidden {
+  display: none;
+}
+
+.game__textarea {
+  grid-column: span 4;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-template-rows: 2fr 0.5fr;
+  gap: 5px;
+  padding: 5px 50px;
+}
+
+.game__textarea--input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 40px;
+  width: 150px;
+  border-radius: 5px;
+  border: none;
+  position: relative;
+}
+
+.game__textarea--proceed {
+  grid-column: 1/2;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.game__textarea--proceed::before {
+  content: "Put your guess here";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: -95px;
+  opacity: 0.5;
+  cursor: default;
+}
+
+.game__textarea--letterbox {
+  grid-column: 2/3;
+  grid-row: 1 / 3;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-size: 40px;
+  line-height: 117.55px;
+  border-radius: 5px;
+  border: none;
+}
+
+.game__button--play {
+  grid-column-start: 2;
+  grid-column: 2/ 3;
+  font-size: 30px;
+}
+
+.btn {
+  background-color: #c3c3c3;
+  border: 1px solid #888;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+.game__button--reset {
+  background: url(../assets/reset.png) no-repeat center center;
+  background-size: 55px;
+  background-color: #c3c3c3;
+}
+
+.btn:hover {
+  background-color: #c9c9c9;
+}

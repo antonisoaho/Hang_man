@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hang man deluxe edition</title>
+    <link rel="stylesheet" href="./styles/style.css" />
+  </head>
+  <body>
+    <main class="game">
+      <header class="game__header">
+        <h1 class="game__header--headertext">To hang or not to hang?</h1>
+      </header>
+      <section class="game__figure">
+        <figure class="game__figure--canvas picture"></figure>
+        <span class="game__figure--canvas canvas-rope"></span>
+        <span class="game__figure--canvas canvas-noose"></span>
+        <span class="game__figure--man man-head hidden">
+          <span class="game__figure--man-head man-eyes">..</span>
+        </span>
+        <span class="game__figure--man man-body hidden"></span>
+        <span class="game__figure--man man-arm left-arm hidden"></span>
+        <span class="game__figure--man man-arm right-arm hidden"></span>
+        <span class="game__figure--man man-leg left-leg hidden"></span>
+        <span class="game__figure--man man-leg right-leg hidden"></span>
+        <span class="game__figure--canvas man-word"></span>
+      </section>
+      <section class="game__textarea">
+        <input
+          type="text"
+          class="game__textarea--input"
+          id="letterinput"
+          maxlength="1"
+        />
+        <label for="letterinput" class="game__textarea--proceed btn btn-proceed"
+          >Proceed</label
+        >
+        <textarea
+          name=""
+          id=""
+          cols="30"
+          rows="1"
+          class="game__textarea--letterbox"
+        ></textarea>
+      </section>
+      <button class="game__button game__button--play btn btn-play">
+        Play!
+      </button>
+      <button class="game__button game__button--reset btn btn-reset"></button>
+    </main>
+    <script defer type="module" src="./scripts/main.js"></script>
+  </body>
+</html>
